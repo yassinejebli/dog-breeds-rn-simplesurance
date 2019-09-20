@@ -1,0 +1,4 @@
+//Actions types
+export const DOGS_FETCH_BEGIN = 'DOGS_FETCH_BEGIN_BEGIN';
+export const DOGS_FETCH_SUCCESS = 'DOGS_FETCH_SUCCESS';
+export const DOGS_FETCH_ERROR = 'DOGS_FETCH_ERROR';

@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import { FlatList, Text, View, StyleSheet } from 'react-native';
-import {getDogBreeds} from "../api/API";
+import {getDogBreeds} from "../api/DogsAPI";
 
 const DogList = () => {
     const [dogBreeds, setDogBreeds] = useState([]);

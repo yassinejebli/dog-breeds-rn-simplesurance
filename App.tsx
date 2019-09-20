@@ -1,21 +1,15 @@
 import React from 'react';
-import { createAppContainer } from 'react-navigation';
-import { createBottomTabNavigator } from 'react-navigation-tabs';
-import DogList from "./screens/DogList";
+import { Provider } from 'react-redux'
+import Router from "./router/router";
+import store from "./store/store";
 
-const TabNavigator = createBottomTabNavigator({
-    DogList: {
-        screen: DogList,
-        navigationOptions: {
-            title: 'Dog List'
-        }
-    },
-    FavList: {
-        screen: DogList,
-        navigationOptions: {
-            title: 'Favourite'
-        }
-    },
-});
+const App = () => {
+    return (
+        <Provider store={store}>
+            <Router />
+        </Provider>
+    );
+};
 
-export default createAppContainer(TabNavigator);
+
+export default App;
