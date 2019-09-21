@@ -8,4 +8,4 @@ const StarNotFilledIcon = props => (
     </Svg>
 );
 
-export default StarNotFilledIcon
+export default StarNotFilledIcon;

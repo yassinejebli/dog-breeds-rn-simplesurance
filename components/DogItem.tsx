@@ -1,15 +1,19 @@
 import React from 'react';
-import {IDogItem} from "../actions/dogsActions";
+import {IDogItem, IDogsActions, toggleDogFavAction} from "../actions/dogsActions";
 import styled from 'styled-components/native';
-import StarNotFilledIcon from "../assets/StarNotFilled";
-import StarFilledIcon from "../assets/StarFilled";
+import StarNotFilledIcon from "./svg/StarNotFilled";
+import StarFilledIcon from "./svg/StarFilled";
+import {bindActionCreators, Dispatch} from "redux";
+import {connect} from 'react-redux';
 
-
-const DogItem = ({name, isFav}: IDogItem) => {
+const DogItem = ({name, isFav, toggleDogFav}: IDogItem&{toggleDogFav: Function}) => { //TODO: Fix Typing
     return (
         <Wrapper>
             <StyledText>{name}</StyledText>
-            {isFav ? <StarFilledIcon fill={'orange'} /> : <StarNotFilledIcon />}
+            {isFav ? <StarFilledIcon onPress={() => {toggleDogFav({name, isFav})}} fill={'orange'} />
+                :
+                <StarNotFilledIcon onPress={() => {toggleDogFav({name, isFav})}} />
+            }
         </Wrapper>
     );
 };
@@ -18,7 +22,7 @@ const Wrapper = styled.View`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 22px 16px;
+    padding: 20px 16px;
 `;
 
 const StyledText = styled.Text`
@@ -26,4 +30,8 @@ const StyledText = styled.Text`
     text-transform: uppercase;
 `;
 
-export default DogItem;
+const mapDispatchToProps = (dispatch: Dispatch<IDogsActions>) => ({
+    ...bindActionCreators({toggleDogFav: toggleDogFavAction}, dispatch)
+});
+
+export default connect(null, mapDispatchToProps)(DogItem);

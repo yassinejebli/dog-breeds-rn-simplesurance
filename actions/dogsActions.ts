@@ -1,4 +1,4 @@
-import {DOGS_FETCH_BEGIN, DOGS_FETCH_SUCCESS, DOGS_FETCH_ERROR} from '../types/types';
+import {DOGS_FETCH_BEGIN, DOGS_FETCH_SUCCESS, DOGS_FETCH_ERROR, TOGGLE_DOG_FAV} from '../types/types';
 import {getDogBreeds} from "../api/DogsAPI";
 import {Action, Dispatch} from "redux";
 
@@ -31,6 +31,13 @@ const dogsFetchSuccess = (dogList: IDogList) => {
 const dogsFetchError = () => {
     return {
         type: DOGS_FETCH_ERROR
+    };
+};
+
+export const toggleDogFavAction = (dogFavItem: IDogItem) => {
+    return {
+        type: TOGGLE_DOG_FAV,
+        dogFavItem
     };
 };
 //////////////////////// End internal actions
