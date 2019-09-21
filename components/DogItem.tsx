@@ -8,9 +8,9 @@ import StarNotFilledIcon from "./svg/StarNotFilled";
 import StarFilledIcon from "./svg/StarFilled";
 import {getDogImageURLByName} from "../api/DogsAPI";
 
-const DogItem = ({name, isFav, toggleDogFav}: IDogItem&{toggleDogFav: Function}) => { //TODO: Fix Typing
+const DogItem = ({name, isFav, toggleDogFav, openImageModalHandler}: IDogItem&{toggleDogFav: Function, openImageModalHandler: Function}) => { //TODO: Fix Typing
     return (
-        <TouchableWithoutFeedback onPress={()=>getDogImageURLByName(name).then(url=>console.log(url))}>
+        <TouchableWithoutFeedback onPress={()=>getDogImageURLByName(name).then(url=>openImageModalHandler(url))}>
             <Wrapper>
                 <StyledText>{name}</StyledText>
                 {isFav ? <StarFilledIcon onPress={() => {toggleDogFav({name, isFav})}} fill={'orange'} />

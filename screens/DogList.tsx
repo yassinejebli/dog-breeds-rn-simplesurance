@@ -1,24 +1,38 @@
 import React, {useEffect, useState} from 'react';
-import { FlatList } from 'react-native';
+import {FlatList, View, Text} from 'react-native';
 import {getDogListAction, IDogItem, IDogsActions} from "../actions/dogsActions";
 import { bindActionCreators, Dispatch } from 'redux';
 import {connect} from 'react-redux';
 import DogItem from "../components/DogItem";
 import styled from 'styled-components/native';
+import ImageModal from "../components/ImageModal";
 
 //TODO: Error/Loading handling
 const DogList = ({getDogList, dogList}) => {
+    const [modalIsOpen, setModalIsOpen] = useState(false);
+    const [imageURLModal, setImageURLModal] = useState();
+
+    const toggleImageModal = () => setModalIsOpen(!modalIsOpen);
+
+    const openImageModal = (imageURL: string) => {
+        setImageURLModal(imageURL);
+        toggleImageModal();
+    };
+
     useEffect(()=>{
         getDogList();
     }, []);
 
     return (
-        <FlatList
-            data={dogList}
-            renderItem={({item}: {item: IDogItem}) => <DogItem {...item}/>}
-            keyExtractor={(item: IDogItem) => item.name}
-            ItemSeparatorComponent={()=><Separator />}
-        />
+        <View>
+            {modalIsOpen&&<ImageModal imageURL={imageURLModal} closeModal={toggleImageModal} />}
+            <FlatList
+                data={dogList}
+                renderItem={({item}: {item: IDogItem}) => <DogItem openImageModalHandler={openImageModal} {...item}/>}
+                keyExtractor={(item: IDogItem) => item.name}
+                ItemSeparatorComponent={()=><Separator />}
+            />
+        </View>
     );
 };
 
