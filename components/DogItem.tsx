@@ -1,20 +1,24 @@
 import React from 'react';
+import {TouchableWithoutFeedback} from "react-native";
+import {bindActionCreators, Dispatch} from "redux";
+import {connect} from 'react-redux';
 import {IDogItem, IDogsActions, toggleDogFavAction} from "../actions/dogsActions";
 import styled from 'styled-components/native';
 import StarNotFilledIcon from "./svg/StarNotFilled";
 import StarFilledIcon from "./svg/StarFilled";
-import {bindActionCreators, Dispatch} from "redux";
-import {connect} from 'react-redux';
+import {getDogImageURLByName} from "../api/DogsAPI";
 
 const DogItem = ({name, isFav, toggleDogFav}: IDogItem&{toggleDogFav: Function}) => { //TODO: Fix Typing
     return (
-        <Wrapper>
-            <StyledText>{name}</StyledText>
-            {isFav ? <StarFilledIcon onPress={() => {toggleDogFav({name, isFav})}} fill={'orange'} />
-                :
-                <StarNotFilledIcon onPress={() => {toggleDogFav({name, isFav})}} />
-            }
-        </Wrapper>
+        <TouchableWithoutFeedback onPress={()=>getDogImageURLByName(name).then(url=>console.log(url))}>
+            <Wrapper>
+                <StyledText>{name}</StyledText>
+                {isFav ? <StarFilledIcon onPress={() => {toggleDogFav({name, isFav})}} fill={'orange'} />
+                    :
+                    <StarNotFilledIcon onPress={() => {toggleDogFav({name, isFav})}} />
+                }
+            </Wrapper>
+        </TouchableWithoutFeedback>
     );
 };
 
@@ -26,7 +30,7 @@ const Wrapper = styled.View`
 `;
 
 const StyledText = styled.Text`
-    font-size: 20px;
+    font-size: 16px;
     text-transform: uppercase;
 `;
 

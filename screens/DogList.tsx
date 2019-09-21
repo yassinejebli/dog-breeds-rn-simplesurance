@@ -6,6 +6,7 @@ import {connect} from 'react-redux';
 import DogItem from "../components/DogItem";
 import styled from 'styled-components/native';
 
+//TODO: Error/Loading handling
 const DogList = ({getDogList, dogList}) => {
     useEffect(()=>{
         getDogList();
