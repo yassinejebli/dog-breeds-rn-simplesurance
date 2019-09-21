@@ -2,17 +2,18 @@ import {DOGS_FETCH_BEGIN, DOGS_FETCH_ERROR, DOGS_FETCH_SUCCESS} from '../types/t
 
 const initialState = {
     dogList: [],
-    isLoading: false
+    isLoading: false,
+    error: false
 };
 
-const dogReducer = (state = initialState, action: any = {}) => {
-    switch(action.type) {
+const dogReducer = (state = initialState, {type, dogList}) => {
+    switch(type) {
         case DOGS_FETCH_BEGIN:
-            return { dogList: [], isLoading: true };
+            return {...initialState, dogList: [], isLoading: true };
         case DOGS_FETCH_SUCCESS:
-            return { dogList: action.dogsList, isLoading: false };
+            return {...initialState, dogList: dogList, isLoading: false };
         case DOGS_FETCH_ERROR:
-            return { dogList: [], isLoading: false };
+            return {...initialState, dogList: [], isLoading: false, error: true };
         default:
             return state;
     }

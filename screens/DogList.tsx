@@ -1,20 +1,20 @@
 import React, {useEffect, useState} from 'react';
 import { FlatList, Text, View, StyleSheet } from 'react-native';
-import {getDogBreeds} from "../api/DogsAPI";
+import {getDogListAction, IDogItem, IDogsActions} from "../actions/dogsActions";
+import { bindActionCreators, Dispatch } from 'redux';
+import {connect} from 'react-redux';
 
-const DogList = () => {
-    const [dogBreeds, setDogBreeds] = useState([]);
-
+const DogList = ({getDogList, dogList}) => {
     useEffect(()=>{
-        getDogBreeds().then((result:Array<string>)=>setDogBreeds(result));
+        getDogList();
     }, []);
 
     return (
         <View>
             <FlatList
-                data={dogBreeds}
-                renderItem={({item}) => <Text style={styles.item}>{item}</Text>}
-                keyExtractor={item => item}
+                data={dogList}
+                renderItem={({item}: {item: IDogItem}) => <Text style={styles.item}>{item.name}</Text>}
+                keyExtractor={(item: IDogItem) => item.name}
             />
         </View>
     );
@@ -32,4 +32,12 @@ const styles = StyleSheet.create({
     },
 });
 
-export default DogList;
+const mapStateToProps = (state) => ({
+    dogList: state.dogList,
+});
+
+const mapDispatchToProps = (dispatch: Dispatch<IDogsActions>) => ({
+    ...bindActionCreators({getDogList: getDogListAction}, dispatch)
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(DogList);
