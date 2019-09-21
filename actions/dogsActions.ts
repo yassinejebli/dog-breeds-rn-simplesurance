@@ -2,7 +2,6 @@ import {DOGS_FETCH_BEGIN, DOGS_FETCH_SUCCESS, DOGS_FETCH_ERROR} from '../types/t
 import {getDogBreeds} from "../api/DogsAPI";
 import {Action, Dispatch} from "redux";
 
-//TODO: Fix typing
 export interface IDogItem {
     name: string;
     isFav?: boolean;
@@ -42,7 +41,7 @@ export const getDogListAction = () => {
         dispatch(dogsFetchBegin());
 
         getDogBreeds().then((dogList: IDogList)=>{
-            //Already sorted by backend
+            //Already sorted on the backend
             const sortedDogList = dogList.sort((a, b) => a.name < b.name ? -1 : a.name > b.name ? 1 : 0);
             dispatch(dogsFetchSuccess(sortedDogList));
         }).catch(error => {

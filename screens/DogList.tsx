@@ -3,6 +3,8 @@ import { FlatList, Text, View, StyleSheet } from 'react-native';
 import {getDogListAction, IDogItem, IDogsActions} from "../actions/dogsActions";
 import { bindActionCreators, Dispatch } from 'redux';
 import {connect} from 'react-redux';
+import DogItem from "../components/DogItem";
+import styled from 'styled-components/native';
 
 const DogList = ({getDogList, dogList}) => {
     useEffect(()=>{
@@ -13,24 +15,19 @@ const DogList = ({getDogList, dogList}) => {
         <View>
             <FlatList
                 data={dogList}
-                renderItem={({item}: {item: IDogItem}) => <Text style={styles.item}>{item.name}</Text>}
+                renderItem={({item}: {item: IDogItem}) => <DogItem {...item}/>}
                 keyExtractor={(item: IDogItem) => item.name}
+                ItemSeparatorComponent={()=><Separator />}
             />
         </View>
     );
 };
 
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        paddingTop: 80
-    },
-    item: {
-        padding: 10,
-        fontSize: 18,
-        height: 44,
-    },
-});
+const Separator = styled.View`
+    width: 100%;
+    height: 1px;
+    background-color: #CED0CE;
+`;
 
 const mapStateToProps = (state) => ({
     dogList: state.dogList,

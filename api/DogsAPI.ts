@@ -5,7 +5,7 @@ export const getDogBreeds = () => {
         .then(response => response.json())
         .then(responseJson => {
             // reshape data
-            return Object.keys(responseJson.message).map(dogName=>({name: dogName, isFav: false}));
+            return Object.keys(responseJson.message).map(dogName=>({name: dogName, isFav: false})) as unknown; //TODO: FIX Typing
         })
         .catch((error) => {
             console.error(error);
