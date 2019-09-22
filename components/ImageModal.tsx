@@ -17,9 +17,9 @@ const ImageModal = ({imageURL, closeModal}: IImageModalProps&IImageModalFunction
             transparent
             visible>
             <Wrapper>
-                <CloseButtonWrapper onPress={closeModal}>
+                <CloseButton onPress={closeModal}>
                     <CloseButtonText>x</CloseButtonText>
-                </CloseButtonWrapper>
+                </CloseButton>
                 <StyledImage source={{uri: imageURL}} />
             </Wrapper>
             <Overlay />
@@ -50,7 +50,7 @@ const StyledImage = styled.Image`
     border-radius: 3px;
 `;
 
-const CloseButtonWrapper = styled.TouchableHighlight`
+const CloseButton = styled.TouchableHighlight`
     display: flex;
     justify-content: center;
     align-content: center;

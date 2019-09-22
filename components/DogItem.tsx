@@ -1,8 +1,8 @@
 import React from 'react';
 import {TouchableWithoutFeedback} from "react-native";
-import {bindActionCreators, Dispatch} from "redux";
+import {bindActionCreators} from "redux";
 import {connect} from 'react-redux';
-import {IDogItem, IDogsActions, toggleDogFavAction} from "../actions/dogsActions";
+import {IDogItem, toggleDogFavAction} from "../actions/dogsActions";
 import styled from 'styled-components/native';
 import StarNotFilledIcon from "./svg/StarNotFilled";
 import StarFilledIcon from "./svg/StarFilled";
@@ -12,7 +12,6 @@ interface IDogItemProps{
     dogItem: IDogItem;
 }
 
-//TODO: Typing
 interface IDogItemFunctions{
     toggleDogFav: (dogItem: IDogItem)=>void;
     openImageModalHandler: (url:string)=>void;
@@ -44,7 +43,7 @@ const StyledText = styled.Text`
     text-transform: uppercase;
 `;
 
-const mapDispatchToProps = (dispatch: Dispatch<IDogsActions>) => ({
+const mapDispatchToProps = (dispatch) => ({
     ...bindActionCreators({toggleDogFav: toggleDogFavAction}, dispatch)
 });
 

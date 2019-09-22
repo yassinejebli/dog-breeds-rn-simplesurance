@@ -55,8 +55,8 @@ export const getDogListAction = () => {
             const sortedDogList = dogList.sort((a, b) => a.name < b.name ? -1 : a.name > b.name ? 1 : 0);
             dispatch(dogsFetchSuccess(sortedDogList));
         }).catch(error => {
-            console.error('getDogListAction - error', error);
             dispatch(dogsFetchError());
+            // console.error('getDogListAction - error', error);
         });
     };
 };

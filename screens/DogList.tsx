@@ -1,14 +1,13 @@
 import React, {useEffect, useState} from 'react';
-import {FlatList, View} from 'react-native';
+import {ActivityIndicator, FlatList, View} from 'react-native';
 import {getDogListAction, IDogItem} from "../actions/dogsActions";
-import { bindActionCreators, Dispatch } from 'redux';
+import { bindActionCreators } from 'redux';
 import {connect} from 'react-redux';
 import DogItem from "../components/DogItem";
 import styled from 'styled-components/native';
 import ImageModal from "../components/ImageModal";
 
-//TODO: Error/Loading handling
-const DogList = ({getDogList, dogList}) => {
+const DogList = ({getDogList, dogList, isLoading, error}) => {
     const [modalIsOpen, setModalIsOpen] = useState(false);
     const [imageURLModal, setImageURLModal] = useState();
 
@@ -22,6 +21,22 @@ const DogList = ({getDogList, dogList}) => {
     useEffect(()=>{
         getDogList();
     }, []);
+
+    if(error)
+        return (
+            <FlexCenterWrapper>
+                <ErrorText>
+                    Oops! Fetching data failed
+                </ErrorText>
+            </FlexCenterWrapper>
+        );
+
+    if(isLoading)
+        return (
+            <FlexCenterWrapper>
+                <ActivityIndicator size="large" color="#0000ff" />
+            </FlexCenterWrapper>
+        );
 
     return (
         <View>
@@ -42,11 +57,25 @@ const Separator = styled.View`
     background-color: #CED0CE;
 `;
 
-const mapStateToProps = (state) => ({
-    dogList: state.dogList,
+const FlexCenterWrapper = styled.View`
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+`;
+
+const ErrorText = styled.Text`
+    color: red;
+    font-size: 18px;
+`;
+
+const mapStateToProps = ({dogList, isLoading, error}) => ({
+    dogList,
+    isLoading,
+    error
 });
 
-const mapDispatchToProps = (dispatch: Dispatch<IDogsActions>) => ({
+const mapDispatchToProps = (dispatch) => ({
     ...bindActionCreators({getDogList: getDogListAction}, dispatch)
 });
 
