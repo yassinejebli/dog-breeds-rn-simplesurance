@@ -22,10 +22,12 @@ const DogItem = ({dogItem, toggleDogFav, openImageModalHandler}: IDogItemProps&I
         <TouchableWithoutFeedback onPress={()=>getDogImageURLByName(dogItem.name).then(url=>openImageModalHandler(url))}>
             <Wrapper>
                 <StyledText>{dogItem.name}</StyledText>
-                {dogItem.isFav ? <StarFilledIcon onPress={() => {toggleDogFav(dogItem)}} fill={'orange'} />
-                    :
-                    <StarNotFilledIcon onPress={() => {toggleDogFav(dogItem)}} />
-                }
+                <ClickableFavIcon onPress={() => {toggleDogFav(dogItem)}}>
+                    {dogItem.isFav ? <StarFilledIcon fill={'orange'} />
+                        :
+                        <StarNotFilledIcon />
+                    }
+                </ClickableFavIcon>
             </Wrapper>
         </TouchableWithoutFeedback>
     );
@@ -34,6 +36,7 @@ const DogItem = ({dogItem, toggleDogFav, openImageModalHandler}: IDogItemProps&I
 const Wrapper = styled.View`
     display: flex;
     flex-direction: row;
+    align-items: center;
     justify-content: space-between;
     padding: 20px 16px;
 `;
@@ -41,6 +44,10 @@ const Wrapper = styled.View`
 const StyledText = styled.Text`
     font-size: 16px;
     text-transform: uppercase;
+`;
+
+const ClickableFavIcon = styled.TouchableOpacity`
+    padding: 8px; // increase the clickable area
 `;
 
 const mapDispatchToProps = (dispatch) => ({

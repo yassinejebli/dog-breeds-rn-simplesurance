@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import {Modal} from 'react-native';
 import styled from 'styled-components/native';
 
@@ -11,6 +11,7 @@ interface IImageModalFunctions{
 }
 
 const ImageModal = ({imageURL, closeModal}: IImageModalProps&IImageModalFunctions) => {
+
     return (
         <Modal
             animationType="fade"
@@ -48,6 +49,7 @@ const StyledImage = styled.Image`
     width: 300px;
     height: 300px;
     border-radius: 3px;
+    background-color: #eeeeee;
 `;
 
 const CloseButton = styled.TouchableHighlight`
