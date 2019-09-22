@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {FlatList, View, Text} from 'react-native';
+import {FlatList, SafeAreaView, View} from 'react-native';
 import {getDogListAction, IDogItem, IDogsActions} from "../actions/dogsActions";
 import { bindActionCreators, Dispatch } from 'redux';
 import {connect} from 'react-redux';
@@ -24,7 +24,7 @@ const DogList = ({getDogList, dogList}) => {
     }, []);
 
     return (
-        <View>
+        <SafeAreaView>
             {modalIsOpen&&imageURLModal&&<ImageModal imageURL={imageURLModal} closeModal={toggleImageModal} />}
             <FlatList
                 data={dogList}
@@ -32,7 +32,7 @@ const DogList = ({getDogList, dogList}) => {
                 keyExtractor={(item: IDogItem) => item.name}
                 ItemSeparatorComponent={()=><Separator />}
             />
-        </View>
+        </SafeAreaView>
     );
 };
 

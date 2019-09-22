@@ -1,18 +1,25 @@
 import React, {useEffect, useState} from 'react';
-import { FlatList } from 'react-native';
-import {IDogItem} from "../actions/dogsActions";
+import {FlatList, SafeAreaView} from 'react-native';
+import {getDogFavListAction, IDogItem, IDogsActions} from "../actions/dogsActions";
 import {connect} from 'react-redux';
 import DogItem from "../components/DogItem";
 import styled from 'styled-components/native';
+import {bindActionCreators, Dispatch} from "redux";
 
-const DogFavList = ({dogFavList}) => {
+const DogFavList = ({getDogFavList, dogFavList}) => {
+    useEffect(()=>{
+        getDogFavList();
+    }, []);
+
     return (
-        <FlatList
-            data={dogFavList}
-            renderItem={({item}: {item: IDogItem}) => <DogItem dogItem={item}/>}
-            keyExtractor={(item: IDogItem) => item.name}
-            ItemSeparatorComponent={()=><Separator />}
-        />
+        <SafeAreaView>
+            <FlatList
+                data={dogFavList}
+                renderItem={({item}: {item: IDogItem}) => <DogItem dogItem={item}/>}
+                keyExtractor={(item: IDogItem) => item.name}
+                ItemSeparatorComponent={()=><Separator />}
+            />
+        </SafeAreaView>
     );
 };
 
@@ -23,7 +30,11 @@ const Separator = styled.View`
 `;
 
 const mapStateToProps = (state) => ({
-    dogFavList: state.dogList.filter(dogItem=>dogItem.isFav) // not good? maybe I should have created separated reducers/actions for fav list manipulation!!
+    dogFavList: state.dogFavList
 });
 
-export default connect(mapStateToProps)(DogFavList);
+const mapDispatchToProps = (dispatch: Dispatch<IDogsActions>) => ({
+    ...bindActionCreators({getDogFavList: getDogFavListAction}, dispatch)
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(DogFavList);
