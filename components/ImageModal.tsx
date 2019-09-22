@@ -57,7 +57,7 @@ const CloseButtonWrapper = styled.TouchableHighlight`
     align-items: center;
     width: 40px;
     height: 40px;
-    background-color: black;
+    background-color: #2196F3;
     margin-left: auto;
 `;
 //    align-self: flex-end;

@@ -6,7 +6,7 @@ import {IDogItem, IDogsActions, toggleDogFavAction} from "../actions/dogsActions
 import styled from 'styled-components/native';
 import StarNotFilledIcon from "./svg/StarNotFilled";
 import StarFilledIcon from "./svg/StarFilled";
-import {getDogImageURLByName} from "../api/DogsAPI";
+import {getDogImageURLByName} from "../api/dogsAPI";
 
 interface IDogItemProps{
     dogItem: IDogItem;

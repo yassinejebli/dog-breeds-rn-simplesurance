@@ -1,6 +1,8 @@
-import {DOGS_FETCH_BEGIN, DOGS_FETCH_SUCCESS, DOGS_FETCH_ERROR, TOGGLE_DOG_FAV} from '../types/types';
-import {getDogBreeds} from "../api/DogsAPI";
-import {Action, Dispatch} from "redux";
+import {
+    DOGS_FETCH_BEGIN, DOGS_FETCH_SUCCESS, DOGS_FETCH_ERROR, TOGGLE_DOG_FAV,
+    DOGS_REFRESH_FAV_LIST
+} from '../types/types';
+import {getDogBreeds} from "../api/dogsAPI";
 
 export interface IDogItem {
     name: string;
@@ -8,11 +10,6 @@ export interface IDogItem {
 }
 
 export type IDogList = IDogItem[];
-
-export interface IDogsActions extends Action {
-    dogList?: IDogList;
-}
-
 
 ////////////////////////// Internal actions
 const dogsFetchBegin = () => {
@@ -35,16 +32,22 @@ const dogsFetchError = () => {
 };
 
 export const toggleDogFavAction = (dogFavItem: IDogItem) => {
+    return (dispatch) => {
+        dispatch({type: TOGGLE_DOG_FAV, dogFavItem});
+        dispatch(refreshDogFavListAction());// refresh dog fav list
+    }
+};
+
+const refreshDogFavListAction = () => {
     return {
-        type: TOGGLE_DOG_FAV,
-        dogFavItem
+        type: DOGS_REFRESH_FAV_LIST
     };
 };
 //////////////////////// End internal actions
 
 
 export const getDogListAction = () => {
-    return (dispatch: Dispatch<IDogsActions>) => {
+    return (dispatch) => {
         dispatch(dogsFetchBegin());
 
         getDogBreeds().then((dogList: IDogList)=>{

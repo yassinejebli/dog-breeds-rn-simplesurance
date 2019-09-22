@@ -1,25 +1,32 @@
 import React, {useEffect, useState} from 'react';
-import {FlatList, SafeAreaView} from 'react-native';
-import {getDogFavListAction, IDogItem, IDogsActions} from "../actions/dogsActions";
+import {FlatList, View} from 'react-native';
+import {IDogItem} from "../actions/dogsActions";
 import {connect} from 'react-redux';
 import DogItem from "../components/DogItem";
 import styled from 'styled-components/native';
-import {bindActionCreators, Dispatch} from "redux";
+import ImageModal from "../components/ImageModal";
 
-const DogFavList = ({getDogFavList, dogFavList}) => {
-    useEffect(()=>{
-        getDogFavList();
-    }, []);
+const DogFavList = ({dogFavList}) => {
+    const [modalIsOpen, setModalIsOpen] = useState(false);
+    const [imageURLModal, setImageURLModal] = useState();
+
+    const toggleImageModal = () => setModalIsOpen(!modalIsOpen);
+
+    const openImageModal = (imageURL: string) => {
+        setImageURLModal(imageURL);
+        toggleImageModal();
+    };
 
     return (
-        <SafeAreaView>
+        <View>
+            {modalIsOpen&&imageURLModal&&<ImageModal imageURL={imageURLModal} closeModal={toggleImageModal} />}
             <FlatList
                 data={dogFavList}
-                renderItem={({item}: {item: IDogItem}) => <DogItem dogItem={item}/>}
+                renderItem={({item}: {item: IDogItem}) => <DogItem openImageModalHandler={openImageModal} dogItem={item}/>}
                 keyExtractor={(item: IDogItem) => item.name}
                 ItemSeparatorComponent={()=><Separator />}
             />
-        </SafeAreaView>
+        </View>
     );
 };
 
@@ -33,8 +40,4 @@ const mapStateToProps = (state) => ({
     dogFavList: state.dogFavList
 });
 
-const mapDispatchToProps = (dispatch: Dispatch<IDogsActions>) => ({
-    ...bindActionCreators({getDogFavList: getDogFavListAction}, dispatch)
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(DogFavList);
+export default connect(mapStateToProps)(DogFavList);
