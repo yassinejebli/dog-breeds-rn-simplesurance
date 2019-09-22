@@ -9,7 +9,7 @@ const DogFavList = ({dogFavList}) => {
     return (
         <FlatList
             data={dogFavList}
-            renderItem={({item}: {item: IDogItem}) => <DogItem {...item}/>}
+            renderItem={({item}: {item: IDogItem}) => <DogItem dogItem={item}/>}
             keyExtractor={(item: IDogItem) => item.name}
             ItemSeparatorComponent={()=><Separator />}
         />

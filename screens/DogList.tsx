@@ -25,10 +25,10 @@ const DogList = ({getDogList, dogList}) => {
 
     return (
         <View>
-            {modalIsOpen&&<ImageModal imageURL={imageURLModal} closeModal={toggleImageModal} />}
+            {modalIsOpen&&imageURLModal&&<ImageModal imageURL={imageURLModal} closeModal={toggleImageModal} />}
             <FlatList
                 data={dogList}
-                renderItem={({item}: {item: IDogItem}) => <DogItem openImageModalHandler={openImageModal} {...item}/>}
+                renderItem={({item}: {item: IDogItem}) => <DogItem openImageModalHandler={openImageModal} dogItem={item}/>}
                 keyExtractor={(item: IDogItem) => item.name}
                 ItemSeparatorComponent={()=><Separator />}
             />
