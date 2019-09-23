@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {ActivityIndicator, FlatList, View} from 'react-native';
-import {getDogListAction, IDogItem} from "../actions/dogsActions";
+import {getDogListAction, IDogItem} from "../actions/dogActions";
 import { bindActionCreators } from 'redux';
 import {connect} from 'react-redux';
 import DogItem from "../components/DogItem";

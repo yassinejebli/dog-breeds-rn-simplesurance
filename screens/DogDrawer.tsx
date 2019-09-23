@@ -10,8 +10,6 @@ const DogDrawer = () => {
             <SignatureCapture
                 style={[{flex:0.95}]}
                 ref={drawerRef}
-                onSaveEvent={null}
-                onDragEvent={null}
                 showNativeButtons={false}
                 showTitleLabel={false}
                 viewMode={"portrait"} />

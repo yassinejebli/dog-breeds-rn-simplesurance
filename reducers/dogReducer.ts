@@ -2,7 +2,7 @@ import {
     DOGS_FETCH_BEGIN, DOGS_FETCH_ERROR, DOGS_FETCH_SUCCESS, DOGS_REFRESH_FAV_LIST,
     TOGGLE_DOG_FAV
 } from '../types/types';
-import {IDogItem} from "../actions/dogsActions";
+import {IDogItem} from "../actions/dogActions";
 
 const initialState = {
     dogList: [],

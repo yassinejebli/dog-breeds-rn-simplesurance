@@ -2,11 +2,11 @@ import React from 'react';
 import {TouchableWithoutFeedback} from "react-native";
 import {bindActionCreators} from "redux";
 import {connect} from 'react-redux';
-import {IDogItem, toggleDogFavAction} from "../actions/dogsActions";
+import {IDogItem, toggleDogFavAction} from "../actions/dogActions";
 import styled from 'styled-components/native';
 import StarNotFilledIcon from "./svg/StarNotFilled";
 import StarFilledIcon from "./svg/StarFilled";
-import {getDogImageURLByName} from "../api/dogsAPI";
+import {getDogImageURLByName} from "../api/dogAPI";
 
 interface IDogItemProps{
     dogItem: IDogItem;

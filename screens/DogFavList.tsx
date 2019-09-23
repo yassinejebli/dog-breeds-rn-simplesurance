@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {FlatList, View} from 'react-native';
-import {IDogItem} from "../actions/dogsActions";
+import {IDogItem} from "../actions/dogActions";
 import {connect} from 'react-redux';
 import DogItem from "../components/DogItem";
 import styled from 'styled-components/native';

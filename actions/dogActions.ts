@@ -2,7 +2,7 @@ import {
     DOGS_FETCH_BEGIN, DOGS_FETCH_SUCCESS, DOGS_FETCH_ERROR, TOGGLE_DOG_FAV,
     DOGS_REFRESH_FAV_LIST
 } from '../types/types';
-import {getDogBreeds} from "../api/dogsAPI";
+import {getDogBreeds} from "../api/dogAPI";
 
 export interface IDogItem {
     name: string;
