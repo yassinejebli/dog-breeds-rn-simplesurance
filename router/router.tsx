@@ -4,6 +4,7 @@ import {createAppContainer} from 'react-navigation';
 import { createMaterialTopTabNavigator, MaterialTopTabBar } from 'react-navigation-tabs';
 import DogList from "../screens/DogList";
 import DogFavList from "../screens/DogFavList";
+import DogDrawer from "../screens/DogDrawer";
 
 
 const SafeAreaMaterialTopTabBar = (props) => {
@@ -25,6 +26,12 @@ const TabNavigator = createMaterialTopTabNavigator({
         screen: DogFavList,
         navigationOptions: {
             title: 'Favourite'
+        }
+    },
+    DogDrawer: {
+        screen: DogDrawer,
+        navigationOptions: {
+            title: 'Draw'
         }
     }
 },{
