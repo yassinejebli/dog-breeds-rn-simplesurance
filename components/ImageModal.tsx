@@ -48,7 +48,7 @@ const Overlay = styled.View`
 const StyledImage = styled.Image`
     width: 300px;
     height: 300px;
-    border-radius: 3px;
+    border-radius: 6px;
     background-color: #eeeeee;
 `;
 
@@ -57,10 +57,14 @@ const CloseButton = styled.TouchableHighlight`
     justify-content: center;
     align-content: center;
     align-items: center;
-    width: 40px;
-    height: 40px;
+    width: 48px;
+    height: 48px;
     background-color: #2196F3;
     margin-left: auto;
+    border-radius: 40px;
+    margin-bottom: -16px;
+    margin-right: -16px;
+    z-index: 2;
 `;
 //    align-self: flex-end;
 
