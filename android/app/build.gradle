@@ -139,6 +139,9 @@ android {
 }
 
 dependencies {
+    implementation project(':appcenter-crashes')
+    implementation project(':appcenter-analytics')
+    implementation project(':appcenter')
     implementation project(':react-native-signature-capture')
     implementation project(':react-native-svg')
     implementation project(':react-native-screens')

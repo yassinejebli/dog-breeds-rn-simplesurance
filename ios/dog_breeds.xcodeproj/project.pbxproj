@@ -11,14 +11,12 @@
 		13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB11A68108700A75B9A /* LaunchScreen.xib */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		22D96BC1C02A72C556324656 /* libPods-dog_breeds.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C21EE4AC2A67B0754A1B876 /* libPods-dog_breeds.a */; };
+		EACF9C02398B436BA955E771 /* AppCenter-Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = C9B4E21AA174456DA156EB14 /* AppCenter-Config.plist */; };
+		EFBD0B3C4CAF81014987151F /* libPods-dog_breeds.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F04AA8F0A68FEA346E98BFD9 /* libPods-dog_breeds.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		008F07F21AC5B25A0029DE68 /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
-		012E212C0BBBB0D03AA64EDD /* Pods-dog_breeds.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dog_breeds.release.xcconfig"; path = "Pods/Target Support Files/Pods-dog_breeds/Pods-dog_breeds.release.xcconfig"; sourceTree = "<group>"; };
-		06D47D9052539DB0B76E45A9 /* Pods-dog_breeds.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dog_breeds.debug.xcconfig"; path = "Pods/Target Support Files/Pods-dog_breeds/Pods-dog_breeds.debug.xcconfig"; sourceTree = "<group>"; };
-		0C21EE4AC2A67B0754A1B876 /* libPods-dog_breeds.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-dog_breeds.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07F961A680F5B00A75B9A /* dog_breeds.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dog_breeds.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = dog_breeds/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = dog_breeds/AppDelegate.m; sourceTree = "<group>"; };
@@ -27,8 +25,13 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = dog_breeds/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = dog_breeds/main.m; sourceTree = "<group>"; };
 		2D16E6891FA4F8E400B85C8A /* libReact.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libReact.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D7D037C23394F28005196F9 /* AppCenter-Config.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AppCenter-Config.plist"; sourceTree = "<group>"; };
+		B560D45ED151912AC92B492A /* Pods-dog_breeds.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dog_breeds.release.xcconfig"; path = "Pods/Target Support Files/Pods-dog_breeds/Pods-dog_breeds.release.xcconfig"; sourceTree = "<group>"; };
+		C9B4E21AA174456DA156EB14 /* AppCenter-Config.plist */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = text.plist.xml; name = "AppCenter-Config.plist"; path = "dog_breeds/AppCenter-Config.plist"; sourceTree = "<group>"; };
+		D11A533C173F35E885A4ED54 /* Pods-dog_breeds.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dog_breeds.debug.xcconfig"; path = "Pods/Target Support Files/Pods-dog_breeds/Pods-dog_breeds.debug.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
+		F04AA8F0A68FEA346E98BFD9 /* libPods-dog_breeds.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-dog_breeds.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,7 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				22D96BC1C02A72C556324656 /* libPods-dog_breeds.a in Frameworks */,
+				EFBD0B3C4CAF81014987151F /* libPods-dog_breeds.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,6 +49,7 @@
 		13B07FAE1A68108700A75B9A /* dog_breeds */ = {
 			isa = PBXGroup;
 			children = (
+				2D7D037C23394F28005196F9 /* AppCenter-Config.plist */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
@@ -63,18 +67,9 @@
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				ED2971642150620600B7C4FE /* JavaScriptCore.framework */,
 				2D16E6891FA4F8E400B85C8A /* libReact.a */,
-				0C21EE4AC2A67B0754A1B876 /* libPods-dog_breeds.a */,
+				F04AA8F0A68FEA346E98BFD9 /* libPods-dog_breeds.a */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		59471859E3CD7D834FE1B8BE /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				06D47D9052539DB0B76E45A9 /* Pods-dog_breeds.debug.xcconfig */,
-				012E212C0BBBB0D03AA64EDD /* Pods-dog_breeds.release.xcconfig */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
@@ -91,7 +86,8 @@
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
-				59471859E3CD7D834FE1B8BE /* Pods */,
+				C9B4E21AA174456DA156EB14 /* AppCenter-Config.plist */,
+				A36D8C31D5D6AD30512CD5FD /* Pods */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -106,6 +102,15 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		A36D8C31D5D6AD30512CD5FD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D11A533C173F35E885A4ED54 /* Pods-dog_breeds.debug.xcconfig */,
+				B560D45ED151912AC92B492A /* Pods-dog_breeds.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -113,7 +118,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "dog_breeds" */;
 			buildPhases = (
-				3DC732C90598DCB2998A686B /* [CP] Check Pods Manifest.lock */,
+				F208E8053EBD66472D1BE0CA /* [CP] Check Pods Manifest.lock */,
 				FD4C38642228810C00325AF5 /* Start Packager */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
@@ -135,20 +140,15 @@
 		83CBB9F71A601CBA00E9B192 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0940;
+				LastUpgradeCheck = 940;
 				ORGANIZATIONNAME = Facebook;
-				TargetAttributes = {
-					00E356ED1AD99517003FC87E = {
-						CreatedOnToolsVersion = 6.2;
-						TestTargetID = 13B07F861A680F5B00A75B9A;
-					};
-				};
 			};
 			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "dog_breeds" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -169,6 +169,7 @@
 			files = (
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
+				EACF9C02398B436BA955E771 /* AppCenter-Config.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -189,7 +190,7 @@
 			shellPath = /bin/sh;
 			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
 		};
-		3DC732C90598DCB2998A686B /* [CP] Check Pods Manifest.lock */ = {
+		F208E8053EBD66472D1BE0CA /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -259,7 +260,7 @@
 /* Begin XCBuildConfiguration section */
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 06D47D9052539DB0B76E45A9 /* Pods-dog_breeds.debug.xcconfig */;
+			baseConfigurationReference = D11A533C173F35E885A4ED54 /* Pods-dog_breeds.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
@@ -279,7 +280,7 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 012E212C0BBBB0D03AA64EDD /* Pods-dog_breeds.release.xcconfig */;
+			baseConfigurationReference = B560D45ED151912AC92B492A /* Pods-dog_breeds.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;

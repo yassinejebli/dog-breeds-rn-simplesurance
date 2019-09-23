@@ -1,4 +1,22 @@
 PODS:
+  - appcenter (2.3.0):
+    - AppCenterReactNativeShared
+    - React
+  - appcenter-analytics (2.3.0):
+    - AppCenter/Analytics
+    - AppCenterReactNativeShared
+    - React
+  - appcenter-crashes (2.3.0):
+    - AppCenter/Crashes (= 2.3.0)
+    - AppCenterReactNativeShared
+    - React
+  - AppCenter/Analytics (2.3.0):
+    - AppCenter/Core
+  - AppCenter/Core (2.3.0)
+  - AppCenter/Crashes (2.3.0):
+    - AppCenter/Core
+  - AppCenterReactNativeShared (2.3.0):
+    - AppCenter/Core (= 2.3.0)
   - boost-for-react-native (1.63.0)
   - DoubleConversion (1.1.6)
   - EXAppLoaderProvider (6.0.0)
@@ -115,6 +133,12 @@ PODS:
   - yoga (0.59.10.React)
 
 DEPENDENCIES:
+  - appcenter (from `../node_modules/appcenter`)
+  - appcenter-analytics (from `../node_modules/appcenter-analytics`)
+  - appcenter-crashes (from `../node_modules/appcenter-crashes`)
+  - AppCenter/Analytics (~> 2.3.0)
+  - AppCenter/Crashes (~> 2.3.0)
+  - AppCenterReactNativeShared (~> 2.3.0)
   - DoubleConversion (from `../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec`)
   - EXAppLoaderProvider (from `../node_modules/expo-app-loader-provider/ios`)
   - EXConstants (from `../node_modules/expo-constants/ios`)
@@ -163,9 +187,17 @@ DEPENDENCIES:
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - AppCenter
+    - AppCenterReactNativeShared
     - boost-for-react-native
 
 EXTERNAL SOURCES:
+  appcenter:
+    :path: "../node_modules/appcenter"
+  appcenter-analytics:
+    :path: "../node_modules/appcenter-analytics"
+  appcenter-crashes:
+    :path: "../node_modules/appcenter-crashes"
   DoubleConversion:
     :podspec: "../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec"
   EXAppLoaderProvider:
@@ -254,6 +286,11 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/yoga"
 
 SPEC CHECKSUMS:
+  AppCenter: 9784d2fc998c9bd0b8fbaf4fb9ed69526d12ce1a
+  appcenter: 751d5e9592c58768f1ddeb1574c7eaa83d0c3176
+  appcenter-analytics: 06f728fa22f6a5043c989bcbadd7946f19f41347
+  appcenter-crashes: 4a1bb907324e607bc95e692163f631b1d174b69e
+  AppCenterReactNativeShared: 7ac481cba7f926848a7be76dca4dcb2692df3b06
   boost-for-react-native: 39c7adb57c4e60d6c5479dd8623128eb5b3f0f2c
   DoubleConversion: bb338842f62ab1d708ceb63ec3d999f0f3d98ecd
   EXAppLoaderProvider: 2638ca3d779c8baae37e63352c785e5e2dad70d5
@@ -288,6 +325,6 @@ SPEC CHECKSUMS:
   UMTaskManagerInterface: 739ea05d5ee490f5befe35201fb683eb9a1fc4b8
   yoga: 128daf064cacaede0c3bb27424b6b4c71052e6cd
 
-PODFILE CHECKSUM: cd34e3d6cf45b73cae130aea86c6cc689e36a6c9
+PODFILE CHECKSUM: 80300541bc40bf5aba7d341a6a2ec39729f10bca
 
 COCOAPODS: 1.5.3
