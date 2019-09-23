@@ -61,7 +61,7 @@ const CloseButton = styled.TouchableHighlight`
     height: 48px;
     background-color: #2196F3;
     margin-left: auto;
-    border-radius: 40px;
+    border-radius: 24px;
     margin-bottom: -16px;
     margin-right: -16px;
     z-index: 2;
