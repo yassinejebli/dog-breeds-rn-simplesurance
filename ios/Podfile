@@ -34,4 +34,6 @@ target 'dog_breeds' do
 
   pod 'RNSVG', :path => '../node_modules/react-native-svg'
 
+  pod 'react-native-signature-capture', :path => '../node_modules/react-native-signature-capture'
+
 end
