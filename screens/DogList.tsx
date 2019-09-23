@@ -19,7 +19,8 @@ const DogList = ({getDogList, dogList, isLoading, error}) => {
     };
 
     useEffect(()=>{
-        getDogList();
+        if(dogList.length < 1) // if dogList is not empty => don't fetch data from server, redux-persist will use the persisted dog list from AsyncStorage
+            getDogList();
     }, []);
 
     if(error)

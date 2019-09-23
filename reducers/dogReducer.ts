@@ -28,7 +28,6 @@ const dogReducer = (state = initialState, {type, dogList, dogFavItem}) => {
         default:
             return state;
     }
-
 };
 
 export default dogReducer;

@@ -26,7 +26,7 @@ const TabNavigator = createMaterialTopTabNavigator({
         navigationOptions: {
             title: 'Favourite'
         }
-    },
+    }
 },{
      tabBarComponent: SafeAreaMaterialTopTabBar
 });
